@@ -50,7 +50,7 @@ print(list[0::2])
 print((list[1:2])*2)
 ```
 ## 3. Namespace
-### 3.1
+### 3.1 global
 ```Python
 num = 666
 
@@ -62,4 +62,19 @@ def changeGlobal(): #change the global value num
 
 changeGlobal()
 print(num)
+```
+### 3.2 nonlocal
+```Python
+def outer():
+   num = "666"
+   def inner():
+      nonlocal num
+      print("a:"+num)
+      num = "999"
+      print("b:"+num)
+   inner()
+   print("c:"+num) # Outer lcoal variable has been changed
+
+outer()
+
 ```
