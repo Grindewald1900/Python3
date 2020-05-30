@@ -49,3 +49,17 @@ print(list[1:2])
 print(list[0::2])
 print((list[1:2])*2)
 ```
+## 3. Namespace
+### 3.1
+```Python
+num = 666
+
+def changeGlobal(): #change the global value num
+   global num
+   print(num)
+   num = 999
+   print(num)
+
+changeGlobal()
+print(num)
+```
